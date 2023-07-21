@@ -41,12 +41,13 @@ To setup database, follow this steps:
 
 Pull latest Postgresql image:
 
-```
+```bash
 docker pull postgres
 ```
 
 Run container with password (e.g. here it's `12345`):
-```
+
+```bash
 docker run -d --name my_pgsql -e POSTGRES_PASSWORD=12345 --network host --restart always postgres:latest
 ```
 
