@@ -37,6 +37,21 @@ Please adhere to this project's `code of conduct`.
 
 ## Deployment
 
+To setup database, follow this steps:
+
+Pull latest Postgresql image:
+
+```bash
+docker pull postgres
+```
+
+Run container with password (e.g. here it's `12345`):
+
+```bash
+docker run -d --name my_pgsql -e POSTGRES_PASSWORD=12345 --network host --restart always postgres:latest
+```
+
+
 To deploy this project run
 
 ```bash
@@ -46,11 +61,7 @@ To deploy this project run
 
 ## Environment Variables
 
-To run this project, you will need to add the following environment variables to your .env file
-
-`API_KEY`
-
-`PORT`
+To run this project, you will need to add some environment variables to your .env file, see .env.example file for reference.
 
 
 
