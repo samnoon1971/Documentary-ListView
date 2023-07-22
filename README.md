@@ -37,15 +37,15 @@ Please adhere to this project's `code of conduct`.
 
 ## Deployment
 
-To setup database, follow this steps:
+To setup the database, follow these steps:
 
-Pull latest Postgresql image:
+Pull the latest Postgresql image:
 
 ```bash
 docker pull postgres
 ```
 
-Run container with password (e.g. here it's `12345`):
+Run the Postgresql database container with a password (e.g. here it's `12345`):
 
 ```bash
 docker run -d --name my_pgsql -e POSTGRES_PASSWORD=12345 --network host --restart always postgres:latest
