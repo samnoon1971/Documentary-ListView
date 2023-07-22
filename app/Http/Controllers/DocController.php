@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Doc;
 
 class DocController extends Controller
 {
@@ -57,6 +58,71 @@ class DocController extends Controller
         ]);
 
     }
+    /**
+     * Display the specified resource.
+     * @param int $id
+     * @return \Illuminate\Http\Response
+     */
+   public function show ($id)
+   {
+       $doc = Doc::find($id);
+       if ($doc) {
+           return response()->json([
+               'status' => 'success',
+               'data' => $doc
+           ]);
+       } else {
+           return response()->json([
+               'status' => 'error',
+               'message' => 'Documentary information not found'
+           ]);
+       }
+    }
 
+    /**
+     * Update the specified resource in storage.
+     * @param \Illuminate\Http\Request $request
+     * @param int $id
+     */
+   public function update (Request $request, $id)
+   {
+       $doc = Doc::find($id);
+       if ($doc) {
+           $doc->update([
+               'title' => $request->title,
+               'description' => $request->description,
+           ]);
+           return response()->json([
+               'status' => 'success',
+               'data' => $doc,
+               'message' => 'Documentary information updated successfully'
+           ]);
+       } else {
+           return response()->json([
+               'status' => 'error',
+               'message' => 'Documentary information not found'
+           ]);
+       }
+   }
+   /**
+    * Remove the specified resource from storage.
+    * @param int $id
+    */
+   public function destroy ($id)
+   {
+       $doc = Doc::find($id);
+       if ($doc) {
+           $doc->delete();
+           return response()->json([
+               'status' => 'success',
+               'message' => 'Documentary information deleted successfully'
+           ]);
+       } else {
+           return response()->json([
+               'status' => 'error',
+               'message' => 'Documentary information not found'
+           ]);
+       }
+   }
 
 }

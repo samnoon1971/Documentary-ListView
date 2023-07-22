@@ -78,6 +78,14 @@ Now, run following commands to run App on your hostmachine:
 php artisan serve
 ```
 
+
+## Run Unit Tests
+
+Use following command,
+
+```bash
+php artisan test
+```
 ## Environment Variables
 
 To run this project, you will need to add some environment variables to your .env file, see .env.example file for reference.
