@@ -1,0 +1,17 @@
+name: Assign to Samnoon
+
+on:
+  issues:
+    types: [opened]
+jobs:
+  assign_issue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Set Assignee to samnoon1971
+        uses: peter-evans/create-issue-branch@v2
+        with:
+          issue: ${{ github.event.issue.number }}
+          assignees: samnoon1971
