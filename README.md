@@ -35,12 +35,47 @@ See `contributing.md` for ways to get started.
 Please adhere to this project's `code of conduct`.
 
 
-## Deployment
+## Deployment (App and DB Services - Multi Container)
 
-To deploy this project run
+
+To deploy this project with `docker-compose`  run
 
 ```bash
 docker-compose up --build
+```
+
+
+## Deployment (DB Container and App on hostmachine)
+
+
+To setup database, follow this steps,
+
+Pull latest Postgresql docker image:
+
+```bash
+docker pull postgres
+```
+
+
+Run container with password (e.g. here it's 12345):
+
+
+
+```bash
+docker run -d --name my_pgsql -e POSTGRES_PASSWORD=12345 --network host --restart always postgres:latest
+```
+
+Setup Database tables using following commands:
+
+```bash
+php artisan migrate
+php artisan db:seed
+```
+
+Now, run following commands to run App on your hostmachine:
+
+```bash
+php artisan serve
 ```
 
 ## Environment Variables
