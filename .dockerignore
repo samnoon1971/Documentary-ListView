@@ -1,0 +1,31 @@
+# Files and directories to ignore when building the Docker image
+
+# Laravel specific
+/node_modules
+/vendor
+/public/storage
+/storage/*.key
+/tests
+
+# Version control files
+.git
+.gitignore
+.gitattributes
+
+
+# Editor-specific files
+*.swp
+.vscode/
+.idea/
+
+# Docker specific
+.dockerignore
+.docker/
+
+# Logs
+logs
+*.log
+
+# OS and editor generated files
+.DS_Store
+Thumbs.db

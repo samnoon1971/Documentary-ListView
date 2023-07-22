@@ -37,27 +37,11 @@ Please adhere to this project's `code of conduct`.
 
 ## Deployment
 
-To setup the database, follow these steps:
-
-Pull the latest Postgresql image:
-
-```bash
-docker pull postgres
-```
-
-Run the Postgresql database container with a password (e.g. here it's `12345`):
-
-```bash
-docker run -d --name my_pgsql -e POSTGRES_PASSWORD=12345 --network host --restart always postgres:latest
-```
-
-
 To deploy this project run
 
 ```bash
-docker build --network host -t samnoon1971/doclistview:1.0.0 .
+docker-compose up --build
 ```
-
 
 ## Environment Variables
 
