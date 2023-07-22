@@ -10,8 +10,8 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v2
 
-      - name: Set Assignee to samnoon1971
-        uses: peter-evans/create-issue-branch@v2
+      - name: Auto-assign Issue
+        uses: pozil/auto-assign-issue@v1.11.0
+
         with:
-          issue: ${{ github.event.issue.number }}
-          assignees: samnoon1971
+          allowSelfAssign: true
