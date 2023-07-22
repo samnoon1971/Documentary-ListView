@@ -55,7 +55,7 @@ docker run -d --name my_pgsql -e POSTGRES_PASSWORD=12345 --network host --restar
 To deploy this project run
 
 ```bash
-  docker build --network host -t samnoon1971/doclistview:1.0.0 .
+docker build --network host -t samnoon1971/doclistview:1.0.0 .
 ```
 
 
