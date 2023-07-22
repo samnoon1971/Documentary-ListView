@@ -6,7 +6,7 @@ services:
       context: .
       dockerfile: Dockerfile
     ports:
-      - "8080:80" # Map container's port 80 to host's port 80 (or any desired port)
+      - "8080:80" # Map container's port 80 to host's port 8080 (or any desired port)
     volumes:
       - .:/var/www/html # Mount the Laravel application code into the container
     depends_on:
