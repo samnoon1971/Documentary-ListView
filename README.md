@@ -81,7 +81,7 @@ php artisan serve
 
 ## Run Unit Tests
 
-Use following command,
+Use following command:
 
 ```bash
 php artisan test
