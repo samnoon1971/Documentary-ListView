@@ -37,7 +37,6 @@ Please adhere to this project's `code of conduct`.
 
 ## Deployment
 
-
 To deploy this project run
 
 ```bash
