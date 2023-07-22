@@ -1,18 +1,18 @@
-name: Assign to Samnoon
+name: Issue assignment
 
 on:
-  issues:
-    types: [opened]
+    issues:
+        types: [opened]
+
 jobs:
-  assign_issue:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Auto-assign Issue
-        uses: pozil/auto-assign-issue@v1.11.0
-
-        with:
-          assignees: samnoon1971
-          allowSelfAssign: true
+    auto-assign:
+        runs-on: ubuntu-latest
+        permissions:
+            issues: write
+        steps:
+            - name: 'Auto-assign issue'
+              uses: pozil/auto-assign-issue@v1
+              with:
+                  assignees: samnoon1971
+                  numOfAssignee: 2
+                  allowSelfAssign: true
