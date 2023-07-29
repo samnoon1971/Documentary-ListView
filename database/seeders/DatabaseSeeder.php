@@ -21,5 +21,11 @@ class DatabaseSeeder extends Seeder
             'email' => 'test@example.com',
             'password' => bcrypt('password'),
         ]);
+        \App\Models\Doc::factory(10)->create();
+
+        \App\Models\Docr::factory()->create([
+            'title' => 'Test Doc',
+            'description' => 'Nolan',
+        ]);
     }
 }
