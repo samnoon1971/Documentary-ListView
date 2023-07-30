@@ -12,7 +12,7 @@ use App\Http\Controllers\DocController;
 Route::post('login', [AuthController::class, 'login']);
 Route::post('logout', [AuthController::class, 'logout']);
 Route::post('refresh', [AuthController::class, 'refresh']);
-Route::post('me', [AuthController::class, 'me']);
+Route::get('me', [AuthController::class, 'me']);
 Route::post('add', [DocController::class, 'store']);
 Route::get('list', [DocController::class, 'index']);
 Route::get('list/{id}', [DocController::class, 'show']);
