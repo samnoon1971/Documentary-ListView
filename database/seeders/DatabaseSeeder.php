@@ -23,7 +23,7 @@ class DatabaseSeeder extends Seeder
         ]);
         \App\Models\Doc::factory(10)->create();
 
-        \App\Models\Docr::factory()->create([
+        \App\Models\Doc::factory()->create([
             'title' => 'Test Doc',
             'description' => 'Nolan',
         ]);
